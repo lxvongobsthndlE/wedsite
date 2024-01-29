@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Person</title>
+</head>
+<body>
+<form action="#" th:action="@{/update/{id}(id=${person.id})}" th:object="${person}" method="post">
+  <label for="firstname">First Name</label>
+  <input type="text" th:field="*{firstname}" id="firstname" placeholder="first name">
+  <span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></span>
+  <label for="lastname">Last Name</label>
+  <input type="text" th:field="*{lastname}" id="lastname" placeholder="last name">
+  <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span>
+  <label for="email">Email</label>
+  <input type="text" th:field="*{email}" id="email" placeholder="email">
+  <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+  <label for="phone">Phone</label>
+  <input type="text" th:field="*{phone}" id="phone" placeholder="phone">
+  <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+  <label for="plusone">Number of plus ones</label>
+  <input type="text" th:field="*{numberOfPlusOnes}" id="plusone" placeholder="number of plus ones">
+  <span th:if="${#fields.hasErrors('numberOfPlusOnes')}" th:errors="*{numberOfPlusOnes}"></span>
+  <input type="submit" value="Update User">
+</form>
+</body>
+</html>
